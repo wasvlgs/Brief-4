@@ -1,0 +1,124 @@
+
+:root{
+    --MainBg: black;
+    --mainTextColor: white;
+    --textSpecial: #F8A73E;
+}
+
+
+.lightmood{
+    --MainBg: white;
+    --mainTextColor: black;
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+span{
+    color: var(--textSpecial);
+    font-size: 1em;
+}
+
+body{
+    background-color: var(--MainBg);
+    color: var(--mainTextColor);
+}
+
+header img{
+    width: 100px;
+    height: 80px;
+}
+
+
+header ul li a{
+    transition: all 0.4s;
+}
+header ul li:hover a{
+    color: var(--textSpecial);
+}
+
+
+
+
+
+
+
+
+
+/* ============================ service =================================== */
+
+
+.todolist .card{
+    background-color: var(--mainTextColor);
+    height: 450px;
+    width: 350px;
+    border-radius: 30px;
+}
+
+.todolist .card > ul{
+    width: 100%;
+    height: 15%;
+    border-bottom: 1px solid var(--MainBg);
+    display: flex;
+    align-items: center;
+    padding-left: 15%;
+    font-size: 1.2rem;
+    list-style:disc;
+}
+.todolist .card .taches{
+    width: 100%;
+    height: 85%;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding-top: 10px;
+    border-radius: 0 0 30px 30px;
+}
+.todolist .card .taches .tache{
+    width: 98%;
+    min-height: 75px;
+    display: flex;
+    border-radius: 10px;
+    padding: 0 2%;
+}
+.todolist .card .taches .tache div:first-of-type,.todolist .card .taches .tache div:last-of-type{
+    display: flex;
+    align-items: center;
+}
+.todolist .card .taches .tache div:first-of-type{
+    width: 70%;
+    height: 100%;
+    cursor: pointer;
+}
+.todolist .card .taches .tache div:last-of-type{
+    width: 30%;
+    height: 100%;
+    justify-content: center;
+    gap: 5px;
+}
+.todolist .card .taches .tache div:first-of-type h2{
+    font-size: 1rem;
+    color: var(--MainBg);
+}
+
+.todolist .card .taches .tache div:last-of-type button{
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.todolist .card .taches .tache div:last-of-type button:first-of-type{
+    background-color: var(--textSpecial);
+}
+.todolist .card .taches .tache div:last-of-type button:last-of-type{
+    background-color: #FF6868;
+}
