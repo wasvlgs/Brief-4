@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,10 @@
     <link rel="stylesheet" href="../style/output.css">
     <link rel="stylesheet" href="../style/style.css">
 </head>
-<body>
-    <header class="w-full h-24 flex items-center justify-between px-20">
+
+<body class="w-full h-full px-10 flex flex-col items-center">
+
+    <header class="w-full h-24 flex items-center justify-between px-10">
         <img src="../img/Logo.svg" alt="Logo">
         <ul class="list-none flex gap-7 text-xl font-semibold">
             <li><a href="#">Home</a></li>
@@ -19,63 +22,141 @@
     </header>
 
     <div class="ajouter my-28 flex justify-center">
-        <button  class="bg-textSpecial rounded-[16px] py-3 px-8">Ajouter des taches</button>
+        <button id="ajouteBoutton" class="bg-textSpecial rounded-[16px] py-3 px-8">Ajouter des taches</button>
     </div>
 
 
-    <div class="todolist w-full min-h-[500px] bg-red-600 flex gap-10 items-center justify-center">
+    <div class="todolist w-full min-h-[500px] flex gap-10 items-center justify-center">
         <div class="card bg-[#CBCBCB]">
-                <ul>
-                    <li  class="text-[#666666]">To Do (<label>1</label>)</li>
-                </ul>
-                <div class="taches">
-                    <div class="tache">
-                        <div><h2>text text text text text text text text</h2></div>
-                        <div><button><img src="../img/icons/edit.svg" alt="edit"></button><button><img src="../img/icons/delete.svg" alt="Delete"></button></div>
-                    </div>
-
-                    <div class="tache" style="background-color: #FFAFAF;">
-                        <div><h2>text text text text text text text text</h2></div>
-                        <div><button><img src="../img/icons/edit.svg" alt="edit"></button><button><img src="../img/icons/delete.svg" alt="Delete"></button></div>
-                    </div>
-                </div>
-        </div>
-
-
-        <div class="card bg-[#FFE876]">
             <ul>
-                <li  class="text-[#FFD400]">In progress (<label>1</label>)</li>
+                <li class="text-[#666666]">To Do (<label>1</label>)</li>
             </ul>
             <div class="taches">
-                <div class="tache">
-                    <div><h2>text text text text text text text text</h2></div>
-                    <div><button><img src="../img/icons/edit.svg" alt="edit"></button><button><img src="../img/icons/delete.svg" alt="Delete"></button></div>
+                <div class="tache bg-[#CBCBCB]">
+                    <div class="ButtonAfficherLaTache">
+                        <h2>text text text text text text text text</h2>
+                    </div>
+                    <div><button class="ButtonEditLaTache"><img src="../img/icons/edit.svg" alt="edit"></button><button><img
+                                src="../img/icons/delete.svg" alt="Delete"></button></div>
                 </div>
 
                 <div class="tache" style="background-color: #FFAFAF;">
-                    <div><h2>text text text text text text text text</h2></div>
-                    <div><button><img src="../img/icons/edit.svg" alt="edit"></button><button><img src="../img/icons/delete.svg" alt="Delete"></button></div>
+                    <div  class="ButtonAfficherLaTache">
+                        <h2>text text text text text text text text</h2>
+                    </div>
+                    <div><button class="ButtonEditLaTache"><img src="../img/icons/edit.svg" alt="edit"></button><button><img
+                                src="../img/icons/delete.svg" alt="Delete"></button></div>
                 </div>
             </div>
-    </div>
+        </div>
 
 
-    <div class="card bg-[#98FF7B]">
-        <ul>
-            <li class="text-[#00F41C]">Done (<label>1</label>)</li>
-        </ul>
-        <div class="taches">
-            <div class="tache">
-                <div><h2>text text text text text text text text</h2></div>
-                <div><button><img src="../img/icons/edit.svg" alt="edit"></button><button><img src="../img/icons/delete.svg" alt="Delete"></button></div>
-            </div>
+        <div class="card">
+            <ul>
+                <li class="text-[#FFD400]">In progress (<label>1</label>)</li>
+            </ul>
+            <div class="taches">
+                <div class="tache bg-[#FFE876]">
+                    <div  class="ButtonAfficherLaTache">
+                        <h2>text text text text text text text text</h2>
+                    </div>
+                    <div><button><img src="../img/icons/edit.svg" alt="edit"></button><button><img
+                                src="../img/icons/delete.svg" alt="Delete"></button></div>
+                </div>
 
-            <div class="tache" style="background-color: #FFAFAF;">
-                <div><h2>text text text text text text text text</h2></div>
-                <div><button><img src="../img/icons/edit.svg" alt="edit"></button><button><img src="../img/icons/delete.svg" alt="Delete"></button></div>
+                <div class="tache" style="background-color: #FFAFAF;">
+                    <div  class="ButtonAfficherLaTache">
+                        <h2>text text text text text text text text</h2>
+                    </div>
+                    <div><button><img src="../img/icons/edit.svg" alt="edit"></button><button><img
+                                src="../img/icons/delete.svg" alt="Delete"></button></div>
+                </div>
             </div>
         </div>
-</div>
+
+
+        <div class="card">
+            <ul>
+                <li class="text-[#00F41C]">Done (<label>1</label>)</li>
+            </ul>
+            <div class="taches">
+                <div class="tache bg-[#98FF7B]">
+                    <div  class="ButtonAfficherLaTache">
+                        <h2>text text text text text text text text</h2>
+                    </div>
+                    <div><button><img src="../img/icons/edit.svg" alt="edit"></button><button><img
+                                src="../img/icons/delete.svg" alt="Delete"></button></div>
+                </div>
+            </div>
+        </div>
     </div>
+
+
+    <div class="alltaches w-full min-h-[400px] bg-[#323232] rounded-[50px] p-4">
+        <div class="topAllTaches w-full h-[80px] flex items-center justify-between px-10">
+            <h3 class="text-textSpecial text-2xl">Tout les taches (<label>4</label>)</h3>
+            <div class="searchs flex gap-5">
+                <select class="bg-textSpecial cursor-pointer w-[120px] h-[45px] rounded-[15px] text-center">
+                    <option disabled selected>Filter By</option>
+                </select>
+                <input class="w-[250px] h-[45px] pl-5 rounded-[5px]" type="text" placeholder="Search">
+            </div>
+        </div>
+
+        <table class="w-full h-full">
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Date</th>
+                <th>DeadLine</th>
+                <th>Type</th>
+            </tr>
+        </table>
+    </div>
+
+
+    <div id="AfficherList" class="aboutTache fixed top-[10%] w-full max-w-[600px] h-[70vh] rounded-[30px] p-8">
+        <span id="CloseAfficherLaTache" class="text-4xl absolute right-8 top-3 cursor-pointer">&times;</span>
+
+        <h2 class="text-xl font-medium text-textSpecial">Title</h2>
+        <p class="text-2xl pl-8 mb-5 mt-4">text text text text text</p>
+
+        <h2 class="text-xl font-medium text-textSpecial">Description</h2>
+        <p class="text-base pl-8 mb-5 mt-4 w-3/4">text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text</p>
+
+        <h2 class="text-xl font-medium text-textSpecial">Date</h2>
+        <p class="text-base pl-8 mb-5 mt-4">12/01/2000 -> 12/01/2000</p>
+
+        <h2 class="text-xl font-medium text-textSpecial">Type</h2>
+        <p class="text-base pl-8 mb-5 mt-4">P1</p>
+
+        <h2 class="text-xl font-medium text-textSpecial">Status</h2>
+        <p class="text-base pl-8 mb-5 mt-4">To Do</p>
+    </div>
+
+    <div id="ajouteList" class="ajoutTache fixed top-[10%] w-full max-w-[600px] h-[70vh] rounded-[30px] p-8 flex flex-col items-center gap-5">
+        <span id="CloseAjouteBoutton" class="text-4xl absolute right-8 top-3 cursor-pointer">&times;</span>
+        <h1 class="text-2xl"><span>Ajoute une tache</span></h1>
+        <input class="w-full h-[45px] rounded-[27px] pl-5 text-black" type="text" placeholder="Enter Title">
+        <textarea class="w-full h-[120px] pl-5 pt-2 rounded-[27px] text-black" placeholder="Enter Description"></textarea>
+        <div class="flex w-full justify-evenly"><div><span class="text-2xl font-medium mr-3">P:</span><input value="1" class="w-[60px] h-[45px] rounded-[15px] text-black pl-3" type="number"></div> <input class="w-[200px] h-[45px] rounded-[27px] pl-5 text-black" type="date"></div>
+        <button class="w-[200px] h-[45px] bg-textSpecial text-white font-medium text-xl rounded-[22px] mt-8">ADD</button>
+    </div>
+
+    <div id="EditList" class="editTache fixed top-[10%] w-full max-w-[600px] h-[70vh] rounded-[30px] p-8 flex flex-col items-center gap-5">
+        <span id="CloseEditLaTache" class="text-4xl absolute right-8 top-3 cursor-pointer">&times;</span>
+        <h1 class="text-2xl"><span>Edite la tache</span></h1>
+        <input class="w-full h-[45px] rounded-[27px] pl-5 text-black" type="text" placeholder="Enter Title">
+        <textarea class="w-full h-[120px] pl-5 pt-2 rounded-[27px] text-black" placeholder="Enter Description"></textarea>
+        <div class="flex w-full justify-evenly"><div><span class="text-2xl font-medium mr-3">P:</span><input value="1" class="w-[60px] h-[45px] rounded-[15px] text-black pl-3" type="number"></div> <input class="w-[200px] h-[45px] rounded-[27px] pl-5 text-black" type="date"></div>
+        <div class="flex gap-[20px]">
+           <button class="w-[200px] h-[45px] bg-textSpecial text-white font-medium text-xl rounded-[15px] mt-8">Edit</button>
+           <button class="w-[200px] h-[45px] bg-[#F83E3E] text-white font-medium text-xl rounded-[15px] mt-8">Delete</button>
+         </div>
+    </div>
+
+    <script src="../script/script.js"></script>
 </body>
+
 </html>

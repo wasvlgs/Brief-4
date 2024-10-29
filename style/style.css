@@ -122,3 +122,45 @@ header ul li:hover a{
 .todolist .card .taches .tache div:last-of-type button:last-of-type{
     background-color: #FF6868;
 }
+
+
+
+
+.alltaches .topAllTaches{
+    border-bottom: 2px solid var(--mainTextColor);
+}
+.alltaches table tr{
+    height: 60px;
+    border-bottom: 1px solid var(--mainTextColor);
+}
+.alltaches table tr td{
+    text-align: center;
+}
+
+
+
+
+
+.aboutTache{
+    background-color: var(--MainBg);
+    box-shadow: 0px 0px 7px 2px var(--mainTextColor);
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    display: none;
+}
+
+.ajoutTache{
+    background-color: var(--MainBg);
+    box-shadow: 0px 0px 7px 2px var(--mainTextColor);
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    display: none;
+}
+
+.editTache{
+    background-color: var(--MainBg);
+    box-shadow: 0px 0px 7px 2px var(--mainTextColor);
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    display: none;
+}
