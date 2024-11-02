@@ -1,10 +1,4 @@
 
-
-
-
-
-
-
     // ================== Nav Bar ====================
 
 
@@ -56,7 +50,6 @@ var taches = {
 
 
 document.addEventListener("DOMContentLoaded",()=>{
-   
     if(JSON.parse(localStorage.getItem("data"))){
         taches = JSON.parse(localStorage.getItem("data"));
     }
