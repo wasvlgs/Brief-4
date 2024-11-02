@@ -270,7 +270,9 @@ function updateAllTachesList(){
         }
 
         updateAll();
-        updateStorage();     
+        updateStorage();  
+    location.reload();
+
         }
 
     }
