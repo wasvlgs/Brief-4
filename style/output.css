@@ -771,10 +771,6 @@ video {
   grid-template-rows: 250px;
 }
 
-.flex-row {
-  flex-direction: row;
-}
-
 .flex-row-reverse {
   flex-direction: row-reverse;
 }

@@ -366,7 +366,8 @@ function addTache(){
 
         updateAll();
     updateStorage();
-    updateStatique()
+    updateStatique();
+    location.reload();
         }else{
             getTitle.style.border = "3px solid red"
             DeadLine.style.border = "3px solid red";
@@ -422,7 +423,7 @@ function AfficherLaTacheFunction(){
 
 }
 function AfficherLaTacheSection(index){
-    AfficherList.style.display = "flex";
+    AfficherList.style.display = "block";
     ajouteList.style.display = "none";
     listEdit.style.display = "none";
 
