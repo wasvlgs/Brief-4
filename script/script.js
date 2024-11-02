@@ -5,30 +5,6 @@
 
 
 
-    // ================== Nav Bar ====================
-
-
-    const openNavbar = document.getElementById("menuButton");
-    const getNavbar  = document.getElementById("navbar");
-    const closeNavbar = document.getElementById("closeNavbar");
-
-
-    openNavbar.onclick = ()=>{
-        getNavbar.style.width = "100%";
-    }
-    closeNavbar.onclick = ()=>{
-        getNavbar.style.width = "0%";
-    }
-    var getLi = getNavbar.querySelectorAll("li");
-
-    for(i = 0; i < getLi.length; i++){
-        getLi[i].onclick = ()=>{
-            getNavbar.style.width = "0%"
-        }
-    }
-
-
-
     // ====================== functions Service ===============
 
 
@@ -70,7 +46,29 @@ document.addEventListener("DOMContentLoaded",()=>{
     searchInput();
     dragItems();
 
-    console.log(taches);
+
+    // ================== Nav Bar ====================
+
+
+    const openNavbar = document.getElementById("menuButton");
+    const getNavbar  = document.getElementById("navbar");
+    const closeNavbar = document.getElementById("closeNavbar");
+
+
+    openNavbar.onclick = ()=>{
+        getNavbar.style.width = "100%";
+    }
+    closeNavbar.onclick = ()=>{
+        getNavbar.style.width = "0%";
+    }
+    var getLi = getNavbar.querySelectorAll("li");
+
+    for(i = 0; i < getLi.length; i++){
+        getLi[i].onclick = ()=>{
+            getNavbar.style.width = "0%"
+        }
+    }
+
 
 
 })
