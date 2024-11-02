@@ -7,18 +7,21 @@
     <title>To Do - Service</title>
     <link rel="stylesheet" href="../style/output.css">
     <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body class="w-full h-full px-10 flex flex-col items-center">
+<body class="w-full h-full flex flex-col items-center">
 
-    <header class="w-full h-24 flex items-center justify-between px-10">
-        <img src="../img/Logo.svg" alt="Logo">
-        <ul class="list-none flex gap-7 text-xl font-semibold">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Service</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+    <header class="w-full h-24 flex items-center justify-between px-20 max-sm:px-10">
+        <a href="../index.html"><img src="../img/Logo.svg" alt="Logo"></a>
+        <ul id="navbar" class="list-none bg-black flex gap-7 text-xl font-semibold max-sm:fixed max-sm:h-[100vh] max-sm:w-[0%] max-sm:top-0 max-sm:right-0 max-sm:flex-col max-sm:justify-center max-sm:items-center max-sm:gap-20 overflow-hidden transition-all">
+            <span id="closeNavbar" class="absolute text-4xl left-8 top-5 hidden max-sm:block">&times;</span>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="service.html">Service</a></li>
+            <li><a href="../index.html#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
+        <i id="menuButton" class="fa-solid fa-bars text-2xl"></i>
     </header>
 
     <div class="ajouter my-20 flex justify-center">
@@ -29,7 +32,7 @@
     <!-- =========================== to do list cards ============================= -->
 
 
-    <div class="todolist w-full min-h-[500px] flex gap-10 items-center justify-center mb-8">
+    <div class="todolist w-full min-h-[500px] flex gap-10 items-center justify-center mb-8 flex-wrap">
         <div data-value="c1" class="card bg-[#cbcbcb]">
 
 
@@ -104,28 +107,29 @@
     <!-- =========================== list taches search and filters ============================= -->
 
 
-    <div class="alltaches w-full min-h-[400px] bg-[#323232] rounded-[50px] p-4">
-        <div class="topAllTaches w-full h-[80px] flex items-center justify-between px-10">
-            <h3 class="text-textSpecial text-2xl">Tout les taches (<label id="AllCounter"></label>)</h3>
+    <div class="alltaches w-[85%] min-h-[400px] bg-[#323232] rounded-[50px] p-4 mb-20">
+        <div class="topAllTaches w-full h-[80px] flex items-center justify-between px-10 max-sm:px-0">
+            <h3 class="text-textSpecial text-2xl max-xl:text-lg max-md:text-base max-sm:hidden">Tout les taches (<label id="AllCounter"></label>)</h3>
+            <h3 class="hidden text-textSpecial max-sm:block">(<label id="AllCounter2">j</label>)</h3>
             <div class="searchs flex gap-5">
-                <select id="getFilter" class="bg-textSpecial cursor-pointer w-[120px] h-[45px] rounded-[15px] text-center">
+                <select id="getFilter" class="bg-textSpecial cursor-pointer w-[120px] h-[45px] rounded-[15px] text-center max-xl:w-[90px] max-xl:h-[35px] max-md:text-sm">
                     <option disabled selected>Filter By</option>
                     <option value="id">ID</option>
                     <option value="date">Date</option>
                     <option value="dead">DeadLine</option>
                     <option value="type">Type</option>
                 </select>
-                <input id="getSearch" class="w-[250px] h-[45px] pl-5 rounded-[5px] text-black" type="text" placeholder="Search">
+                <input id="getSearch" class="w-[250px] h-[45px] pl-5 rounded-[5px] text-black max-xl:w-[150px] max-xl:h-[35px] max-md:text-sm" type="text" placeholder="Search">
             </div>
         </div>
 
         <table class="w-full h-full">
             <thead>
-                <tr>
+                <tr class="max-md:text-sm">
                     <th>ID</th>
                     <th>Title</th>
-                    <th>Description</th>
-                    <th>Date</th>
+                    <th class="max-xl:hidden">Description</th>
+                    <th class="max-sm:hidden">Date</th>
                     <th>DeadLine</th>
                     <th>Type</th>
                 </tr>
@@ -204,6 +208,47 @@
                 class="w-[200px] h-[45px] bg-[#F83E3E] text-white font-medium text-xl rounded-[15px] mt-8">Delete</button>
         </div>
     </div>
+
+
+    <!-- =========================== footer ============================= -->
+
+
+    <footer id="contact" class="w-full min-h-[450px] bg-[#212121] flex flex-col items-center justify-between">
+        <div class="footerTop w-[90%] h-[100px] border-b-2 border-textSpecial flex items-center justify-between px-4">
+            <img src="../img/Logo.svg" alt="Logo To Do List">
+            <div class="socialMedia flex gap-5 text-3xl text-textSpecial max-sm:text-xl">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+
+        <div class="footerContent w-[90%] grid grid-cols-3 grid-rows-[250px] max-md:grid-cols-2 max-md:grid-rows-[250px 250px] max-sm:grid-cols-1 max-sm:grid-rows-[250px 250px 250px]">
+            <ul class="flex flex-col items-center p-10 gap-5">
+                <li class="text-xl font-bold">Liens utiles</li>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+            <ul  class="flex flex-col items-center p-10 gap-5">
+                <li class="text-xl font-bold">Nos servicess</li>
+                <li>Gestion des tâches</li>
+                <li>Organisation du temps</li>
+                <li>Articles et conseils</li>
+            </ul>
+            <ul  class="flex flex-col items-center p-10 gap-5">
+                <li class="text-xl font-bold">À propos</li>
+                <li>Description courte</li>
+                <li>Qui sommes-nous</li>
+            </ul>
+        </div>
+
+        <div class="bottomFooter w-full h-20 flex justify-center items-center">
+            <h5>© 2024 Wassim Yazza. All rights reserved</h5>
+        </div>
+    </footer>
+
 
     <script src="../script/script.js"></script>
 </body>

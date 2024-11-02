@@ -6,27 +6,111 @@
     <title>To Do - Home</title>
     <link rel="stylesheet" href="style/output.css">
     <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body class="h-full w-full">
 
-    <header class="w-full h-24 flex items-center justify-between px-20">
-        <img src="img/Logo.svg" alt="Logo">
-        <ul class="list-none flex gap-7 text-xl font-semibold">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Service</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+    <header class="w-full h-24 flex items-center justify-between px-20 max-sm:px-10">
+        <a href="index.html"><img src="img/Logo.svg" alt="Logo"></a>
+        <ul id="navbar" class="list-none bg-black flex gap-7 text-xl font-semibold max-sm:fixed max-sm:h-[100vh] max-sm:w-[0%] max-sm:top-0 max-sm:right-0 max-sm:flex-col max-sm:justify-center max-sm:items-center max-sm:gap-20 overflow-hidden transition-all">
+            <span id="closeNavbar" class="absolute text-4xl left-8 top-5 hidden max-sm:block">&times;</span>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="pages/service.html">Service</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
+        <i id="menuButton" class="fa-solid fa-bars text-2xl"></i>
     </header>
 
+
+
+
     <section class="home h-[86vh] flex">
-        <div class="content w-1/2 h-full flex flex-col items-center">
+        <div class="content w-1/2 h-full flex flex-col justify-center pl-20 gap-10 max-lg:w-full max-lg:items-center  max-lg:pl-0">
             <h3 class="text-lg"><span>Welcome to,</span></h3>
-            <h1 class="text-6xl"><span>ToDo</span> List Website</h1>
-            <p class="text-base">Notre site vous aide à gérer vos tâches efficacement en vous permettant d'organiser vos tâches quotidiennes et de définir vos priorités facilement, ce qui vous aide à atteindre vos objectifs de manière ordonnée et fluide.</p>
+            <h1 class="text-6xl font-bold  max-lg:text-center max-sm:text-4xl"><span>ToDo</span> List Website</h1>
+            <p class="text-base max-lg:text-center max-lg:w-[80%]  max-lg:text-sm">Notre site vous aide à gérer vos tâches efficacement en vous permettant d'organiser vos tâches quotidiennes et de définir vos priorités facilement, ce qui vous aide à atteindre vos objectifs de manière ordonnée et fluide.</p>
+            <a href="pages/service.html" class="w-[200px] h-[45px] bg-textSpecial flex justify-center items-center rounded-[17px] font-bold text-lg">Start now for free!</a>
         </div>
-        <div class="img w-1/2 h-full"></div>
+        <div class="img w-1/2 h-full flex justify-center items-center max-lg:hidden">
+            <img class="w-[60%] h-[60%]" src="img/todo.svg" alt="To Do image">
+        </div>
     </section>
+
+
+
+    <section id="about" class="about mb-20 flex flex-col gap-10">
+        <div class="row w-full min-h-[400px] flex max-lg:flex-col">
+            <div class="left w-1/2 h-full flex flex-col justify-center pl-[10%] gap-8 max-lg:w-full  gap-10">
+                <h2 class="text-2xl font-bold max-w-[70%]"><span>Qui sommes-nous</span></h2>
+                <p class="max-w-[90%]">Nous sommes une plateforme spécialisée dans la gestion de tâches, conçue pour vous aider à organiser votre quotidien et atteindre vos objectifs en toute simplicité. Notre mission est de vous offrir un outil intuitif, où vous pouvez facilement ajouter, classer et gérer vos tâches pour rester à jour sur tout ce que vous avez à accomplir, que ce soit dans le cadre personnel ou professionnel.</p>
+            </div>
+            <div class="right w-1/2 flex justify-center items-center max-lg:w-full">
+                <img class="max-w-[50%] max-h-2/3" src="img/about1.svg" alt="Image About 1">
+            </div>
+        </div>
+
+        <div class="row w-full min-h-[400px] flex flex-row-reverse  max-lg:flex-col  gap-10">
+            <div class="left w-1/2 h-full flex flex-col justify-center pl-[10%] gap-8 max-lg:w-full">
+                <h2 class="text-2xl font-bold max-w-[70%]"><span>Notre mission</span></h2>
+                <p class="max-w-[90%]">Nous avons pour objectif d’aider les individus et les équipes à améliorer leur productivité et à organiser leur temps de manière efficace. Conscients que chaque personne a sa propre méthode de gestion du quotidien, nous avons développé une plateforme flexible qui s’adapte à vos besoins, tout en vous permettant de prioriser vos tâches en fonction de votre emploi du temps.</p>
+            </div>
+            <div class="right w-1/2 flex justify-center items-center max-lg:w-full">
+                <img class="max-w-[50%] max-h-2/3" src="img/about2.svg" alt="Image About 2">
+            </div>
+        </div>
+
+        <div class="row w-full min-h-[400px] flex  max-lg:flex-col gap-10">
+            <div class="left w-1/2 h-full flex flex-col justify-center pl-[10%] gap-8 max-lg:w-full">
+                <h2 class="text-2xl font-bold max-w-[70%]"><span>Notre vision</span></h2>
+                <p class="max-w-[90%]">Nous aspirons à devenir la référence en matière de gestion des tâches dans le monde francophone, en contribuant au succès de nos utilisateurs grâce à un équilibre harmonieux entre les différentes tâches et une meilleure efficacité. En améliorant l’expérience de gestion des tâches, nous souhaitons rendre la vie plus organisée et moins stressante.</p>
+            </div>
+            <div class="right w-1/2 flex justify-center items-center max-lg:w-full">
+                <img class="max-w-[50%] max-h-2/3" src="img/about3.svg" alt="Image About 3">
+            </div>
+        </div>
+    </section>
+
+
+
     
+
+    <footer id="contact" class="w-full min-h-[450px] bg-[#212121] flex flex-col items-center justify-between">
+        <div class="footerTop w-[90%] h-[100px] border-b-2 border-textSpecial flex items-center justify-between px-4">
+            <img src="../img/Logo.svg" alt="Logo To Do List">
+            <div class="socialMedia flex gap-5 text-3xl text-textSpecial max-sm:text-xl">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+
+        <div class="footerContent w-[90%] grid grid-cols-3 grid-rows-[250px] max-md:grid-cols-2 max-md:grid-rows-[250px 250px] max-sm:grid-cols-1 max-sm:grid-rows-[250px 250px 250px]">
+            <ul class="flex flex-col items-center p-10 gap-5">
+                <li class="text-xl font-bold">Liens utiles</li>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+            <ul  class="flex flex-col items-center p-10 gap-5">
+                <li class="text-xl font-bold">Nos servicess</li>
+                <li>Gestion des tâches</li>
+                <li>Organisation du temps</li>
+                <li>Articles et conseils</li>
+            </ul>
+            <ul  class="flex flex-col items-center p-10 gap-5">
+                <li class="text-xl font-bold">À propos</li>
+                <li>Description courte</li>
+                <li>Qui sommes-nous</li>
+            </ul>
+        </div>
+
+        <div class="bottomFooter w-full h-20 flex justify-center items-center">
+            <h5>© 2024 Wassim Yazza. All rights reserved</h5>
+        </div>
+    </footer>
+
+    <script src="script/script.js"></script>
 </body>
 </html>

@@ -2,6 +2,37 @@
 
 
 
+
+
+
+    // ================== Nav Bar ====================
+
+
+    const openNavbar = document.getElementById("menuButton");
+    const getNavbar  = document.getElementById("navbar");
+    const closeNavbar = document.getElementById("closeNavbar");
+
+
+    openNavbar.onclick = ()=>{
+        getNavbar.style.width = "100%";
+    }
+    closeNavbar.onclick = ()=>{
+        getNavbar.style.width = "0%";
+    }
+    var getLi = getNavbar.querySelectorAll("li");
+
+    for(i = 0; i < getLi.length; i++){
+        getLi[i].onclick = ()=>{
+            getNavbar.style.width = "0%"
+        }
+    }
+
+
+
+    // ====================== functions Service ===============
+
+
+
 var listEdit = document.getElementById("listEdit");
     var ajouteList = document.getElementById("ajouteList");
     var AfficherList = document.getElementById("AfficherList");
@@ -181,11 +212,11 @@ function updateAllTachesList(){
     document.querySelector("tbody").innerHTML = "";
 
     for(i = 0; i < taches.id.length; i++){
-        document.querySelector("tbody").innerHTML += `<tr onclick="editButton(${i})" class="allTaches cursor-pointer w-full">
+        document.querySelector("tbody").innerHTML += `<tr onclick="editButton(${i})" class="allTaches cursor-pointer w-full max-md:text-sm">
             <td class="allIdText">${taches.id[i]}</td>
             <td class="allTitleText">${taches.Title[i]}</td>
-            <td>${taches.Description[i]}</td>
-            <td>${taches.Date[i]}</td>
+            <td class="max-xl:hidden">${taches.Description[i]}</td>
+            <td  class="max-sm:hidden">${taches.Date[i]}</td>
             <td>${taches.DeadLine[i]}</td>
             <td>${taches.Type[i]}</td>
         </tr>`
@@ -425,11 +456,13 @@ function updateStatique(){
     var taches = document.getElementsByClassName("taches");
     var allTr = document.querySelectorAll("tr");
     var AllCounter = document.getElementById("AllCounter");
+    var AllCounter2 = document.getElementById("AllCounter2");
 
     card[0].querySelector("label").innerText = taches[0].getElementsByClassName("tache").length;
     card[1].querySelector("label").innerText = taches[1].getElementsByClassName("tache").length;
     card[2].querySelector("label").innerText = taches[2].getElementsByClassName("tache").length;
     AllCounter.innerText = allTr.length - 1;
+    AllCounter2.innerText = allTr.length - 1;
 }
 
 
@@ -596,3 +629,10 @@ function dragItems(){
     }
 
 }
+
+
+
+
+
+
+

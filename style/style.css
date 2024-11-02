@@ -45,6 +45,14 @@ header ul li:hover a{
 
 
 
+/* ============================ Home =================================== */
+
+
+
+
+
+
+
 
 
 
@@ -173,4 +181,24 @@ header ul li:hover a{
     overflow-y: auto;
     scroll-behavior: smooth;
     display: none;
+}
+
+
+
+.socialMedia i{
+    cursor: pointer;
+    transition: all 0.4s;
+}.socialMedia i:hover{
+    transform: scale(110%);
+}
+
+#menuButton{
+    cursor: pointer;
+    display: none;
+}
+
+@media (max-width:640px) {
+    #menuButton{
+        display: block;
+    }
 }
