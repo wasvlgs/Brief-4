@@ -14,8 +14,11 @@ Stockage des données pour garantir la conservation des informations même aprè
 Fonctionnalité de glisser-déposer (drag and drop) pour déplacer facilement les tâches entre différentes sections.
 Changement de l'arrière-plan de la tâche en fonction de son importance, ajoutant ainsi une dimension visuelle à l'organisation des tâches.
 Fonctionnalité de recherche et filtrage des résultats, facilitant ainsi la recherche des tâches requises rapidement et efficacement.
+
 Lien vers le site web hébergé sur GitHub Pages : https://wasvlgs.github.io/Brief-4/
+
 Lien vers le projet sur GitHub : https://github.com/wasvlgs/Brief-4
+
 Je vous remercie pour votre temps et votre attention. J'attends avec impatience vos retours et vos avis sur le projet.
 
 Cordialement,
