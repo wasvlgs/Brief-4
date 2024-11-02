@@ -5,6 +5,30 @@
 
 
 
+    // ================== Nav Bar ====================
+
+
+    const openNavbar = document.getElementById("menuButton");
+    const getNavbar  = document.getElementById("navbar");
+    const closeNavbar = document.getElementById("closeNavbar");
+
+
+    openNavbar.onclick = ()=>{
+        getNavbar.style.width = "100%";
+    }
+    closeNavbar.onclick = ()=>{
+        getNavbar.style.width = "0%";
+    }
+    var getLi = getNavbar.querySelectorAll("li");
+
+    for(i = 0; i < getLi.length; i++){
+        getLi[i].onclick = ()=>{
+            getNavbar.style.width = "0%"
+        }
+    }
+
+
+
     // ====================== functions Service ===============
 
 
@@ -32,43 +56,17 @@ var taches = {
 
 
 document.addEventListener("DOMContentLoaded",()=>{
-    taches = JSON.parse(localStorage.getItem("data"));
-
-
-
-    
-    
    
-    updateAll()
+    if(JSON.parse(localStorage.getItem("data"))){
+        taches = JSON.parse(localStorage.getItem("data"));
+    }
+    updateAll();
     ajouteTacheSection();
     addTache();
     AfficherLaTacheFunction();
     searchInput();
     dragItems();
-
-
-    // ================== Nav Bar ====================
-
-
-    const openNavbar = document.getElementById("menuButton");
-    const getNavbar  = document.getElementById("navbar");
-    const closeNavbar = document.getElementById("closeNavbar");
-
-
-    openNavbar.onclick = ()=>{
-        getNavbar.style.width = "100%";
-    }
-    closeNavbar.onclick = ()=>{
-        getNavbar.style.width = "0%";
-    }
-    var getLi = getNavbar.querySelectorAll("li");
-
-    for(i = 0; i < getLi.length; i++){
-        getLi[i].onclick = ()=>{
-            getNavbar.style.width = "0%"
-        }
-    }
-
+    console.log(taches);
 
 
 })
