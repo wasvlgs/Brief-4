@@ -252,23 +252,37 @@ function updateAllTachesList(){
 
 
     function editFunction(button){
-        var setTitle = document.getElementById("setTitle").value;
-        var setDescription = document.getElementById("setDescription").value;
-        var setDeadLine = document.getElementById("setDeadLine").value;
-        var setType = document.getElementById("setType").value;
+        var setTitle = document.getElementById("setTitle");
+        var setDescription = document.getElementById("setDescription");
+        var setDeadLine = document.getElementById("setDeadLine");
+        var setType = document.getElementById("setType");
         var getId = button.value;
+        var today = new Date();
+        today.setHours(0, 0, 0, 0); 
+
+        var checkDead = new Date(setDeadLine.value);
+
+        if(setTitle.value == ""){
+            setTitle.style.border = "3px solid red";
+        }else if(setDeadLine.value == ""){
+            setDeadLine.style.border = "3px solid red";
+        }else if(checkDead < today){
+            setDeadLine.style.border = "3px solid red";
+        }else{
+       
         for(i = 0; i < taches.id.length; i++){
             if(taches.id[i] == getId){
-                taches.Title[i] = setTitle;
-                taches.Description[i] = setDescription;
-                taches.DeadLine[i] = setDeadLine;
-                taches.Type[i] = setType;
+                taches.Title[i] = setTitle.value;
+                taches.Description[i] = setDescription.value;
+                taches.DeadLine[i] = setDeadLine.value;
+                taches.Type[i] = setType.value;
                 listEdit.style.display = "none";
             }
         }
 
         updateAll();
-        updateStorage();
+        updateStorage();     
+        }
 
     }
 
@@ -294,31 +308,53 @@ function deleteTache(index){
 
 function addTache(){
     var addSubmit = document.getElementById("addSubmit");
+    var getTitle = document.getElementById("getTitle");
+    var DeadLine = document.getElementById("getDate");
+    var getCount = document.getElementById("getCount");
+    var today = new Date();
+    today.setHours(0, 0, 0, 0); 
 
     addSubmit.onclick = ()=>{
+
+        var checkDeadLine = new Date(DeadLine.value);
+
+        if(getTitle.value == ""){
+            getTitle.style.border = "3px solid red";
+        }else if(getCount.value == ""){
+            getCount.style.border = "3px solid red";
+        }else if(DeadLine.value == ""){
+            DeadLine.style.border = "3px solid red";
+        }else if(checkDeadLine < today){
+            DeadLine.style.border = "3px solid red";
+        }else if(getCount.value >= 1){
+            getTitle.style.border = "none";
+            getCount.style.border = "none";
+            DeadLine.style.border = "none";
+
+
+
+
         var getid;
         if(taches.id.length > 0){
             getid = taches.id[taches.id.length -1] + 1;
         }else{
             getid = 1;
         }
-        var today = new Date;
         var day = today.getDate();
         var month = today.getMonth() +1;
         var year = today.getFullYear();
-        var getTitle = document.getElementById("getTitle").value;
-        var getDesc = document.getElementById("getDesc").value;
-        var getCount = document.getElementById("getCount").value;
-        var DeadLine = document.getElementById("getDate").value;
-        var getType = document.getElementById("getType").value;
+        var getDesc = document.getElementById("getDesc");
+        var getType = document.getElementById("getType");
+
+ 
         var index = taches.id.length;
-        for(i = 0; i < getCount; i++){
+        for(i = 0; i < getCount.value; i++){
             taches.id[index] = getid;
-            taches.Title[index] = getTitle;
-            taches.Description[index] = getDesc;
+            taches.Title[index] = getTitle.value;
+            taches.Description[index] = getDesc.value;
             taches.Date[index] = year+"-"+month+"-"+day;
-            taches.DeadLine[index] = DeadLine;
-            taches.Type[index] = getType;
+            taches.DeadLine[index] = DeadLine.value;
+            taches.Type[index] = getType.value;
             taches.Statu[index] = "todo";
             index++;
             getid++;
@@ -331,7 +367,11 @@ function addTache(){
         updateAll();
     updateStorage();
     updateStatique()
-
+        }else{
+            getTitle.style.border = "3px solid red"
+            DeadLine.style.border = "3px solid red";
+            getCount.style.border = "3px solid red";
+        }
     }
     
 }
@@ -434,19 +474,6 @@ function searchInput(){
     }
 }
 
-// =========================== Filter Les taches ==========================
-
-
-// function filterTaches(){
-//     var selectItems = document.getElementsByClassName("allTaches");
-//     var arr = [];
-//     for(i = 0; i < selectItems.length; i++){
-//         arr[i] = selectItems[i].getElementsByClassName("allTitleText").innerText;
-//     }
-//     console.log(typeof(selectItems))
-// }
-
-
 
 // =========================== Update Statique ==========================
 
@@ -468,82 +495,6 @@ function updateStatique(){
 
 // =========================== Drag Items ==========================
 
-// function dragItems(){
-//     var item = null;
-
-//     var card = document.getElementsByClassName("card")
-//     var toDoTaches = document.getElementsByClassName("tache");
-
-//     for(i = 0;i < toDoTaches.length; i++){
-//         toDoTaches[i].addEventListener("dragstart",function(){
-//             item = this;
-//             console.log("drag start");
-
-//             for (let j = 0; j < card.length; j++) {
-//                 card[j].id = this.id;
-//             }
-//                 this.removeAttribute("id");
-            
-//             this.style.opacity = '0.3';
-
-//         })
-//         toDoTaches[i].addEventListener("dragend",function(){
-//             console.log("drag end");
-//             this.style.opacity = '1';
-//             item = null;
-
-//             for (let j = 0; j < card.length; j++) {
-//                 delete card[j].dataset.value;
-//             }
-//         })
-//     }
-
-//     for(i = 0;i < card.length; i++){
-//         card[i].addEventListener("dragover",function(e) {
-//             e.preventDefault();
-//             this.style.background = "rgb(203,203,203)";
-//             this.style.opacity = "0.7";
-//         })
-
-//         card[i].addEventListener("dragleave",function() {
-//             this.style.background = "white";
-//             this.style.opacity = "1";
-//         })
-
-//         card[i].addEventListener("drop",function() {
-//             this.querySelector(".taches").append(item);
-//             this.style.background = "white";
-//             this.style.opacity = "1";
-//             var getTypeCard = this.id;
-//             alert(getTypeCard);
-//             alert(this.getAttribute("data-value"))
-//             for(j = 0; j < taches.id.length; j++){
-//                 if(taches.id[j] == this.getAttribute("data-value")){
-//                     if(getTypeCard == "c1"){
-//                         taches.Statu[j] = "todo";
-                        
-//                     }else if(getTypeCard == "c2"){
-//                         taches.Statu[j] = "pending";
-            
-//                     }else{
-//                         taches.Statu[j] = "done";
-                        
-//                     }
-//                 }
-//             }
-
-            
-//                         updateStatique();
-//                         updateAll();
-//                         updateStorage();
-                        
-            
-//         })
-
-//     }
-    
- 
-// }
 
 
 
