@@ -695,6 +695,14 @@ video {
   min-height: 500px;
 }
 
+.min-h-\[45px\] {
+  min-height: 45px;
+}
+
+.min-h-\[70vh\] {
+  min-height: 70vh;
+}
+
 .w-1\/2 {
   width: 50%;
 }
@@ -910,6 +918,10 @@ video {
 .bg-textSpecial {
   --tw-bg-opacity: 1;
   background-color: rgb(248 167 62 / var(--tw-bg-opacity));
+}
+
+.bg-\[\] {
+  background-color: ;
 }
 
 .p-10 {

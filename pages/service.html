@@ -169,10 +169,10 @@
     </div>
 
     <div id="ajouteList"
-        class="ajoutTache fixed top-[10%] w-full max-w-[600px] h-[70vh] rounded-[30px] p-8 flex flex-col items-center gap-5">
+        class="ajoutTache fixed top-[10%] w-full max-w-[600px] min-h-[70vh] rounded-[30px] p-8 flex flex-col items-center gap-5">
         <span id="CloseAjouteBoutton" class="text-4xl absolute right-8 top-3 cursor-pointer">&times;</span>
         <h1 class="text-2xl"><span>Ajoute une tache</span></h1>
-        <input id="getTitle" class="w-full h-[45px] rounded-[27px] pl-5 text-black" type="text"
+        <input id="getTitle" class="w-full min-h-[45px] rounded-[27px] pl-5 text-black" type="text"
             placeholder="Enter Title">
         <textarea id="getDesc" class="w-full h-[120px] pl-5 pt-2 rounded-[27px] text-black"
             placeholder="Enter Description"></textarea>
@@ -186,8 +186,13 @@
             <option value="P2">P2</option>
             <option value="P3">P3</option>
         </select>
+        <select id="getStatus" class="w-[200px] h-[40px] text-black rounded-[16px] pl-4">
+            <option value="todo">To Do</option>
+            <option value="pending">Pending</option>
+            <option value="done">Done</option>
+        </select>
         <button id="addSubmit"
-            class="w-[200px] h-[45px] bg-textSpecial text-white font-medium text-xl rounded-[22px] mt-8">ADD</button>
+            class="w-[200px] h-[45px] bg-textSpecial text-white font-medium text-xl rounded-[22px] mt-4">ADD</button>
     </div>
 
     <div id="listEdit"

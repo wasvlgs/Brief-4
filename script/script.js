@@ -96,13 +96,13 @@ function updateTachesDone(){
         if(taches.Statu[i] == "done"){
             var getBackground;
             if(taches.Type[i] == "P1"){
-                getBackground = "#CBCBCB";
+                getBackground = "#FFAFAF";
             }else if(taches.Type[i] == "P2"){
-                getBackground = "#FFE876";
+                getBackground = "#ffcc6d";
             }else{
                 getBackground = "#98FF7B";
             }
-            tachesList[2].innerHTML += `<div data-value="${i}" draggable="true" data-value="${taches.id[i]}" class="tache bg-[${getBackground}]" style="border-top:7px solid aqua">
+            tachesList[2].innerHTML += `<div data-value="${i}" draggable="true" data-value="${taches.id[i]}" class="tache" style="border-top:7px solid aqua;background-color:${getBackground};">
                     <div onclick="AfficherLaTacheSection(${i})">
                         <span class="text-2xl font-bold pr-2">${taches.Type[i]}</span><h2 class="text-sm">${taches.Title[i]}</h2>
                     </div>
@@ -125,13 +125,13 @@ function updateTachesPending(){
         if(taches.Statu[i] == "pending"){
             var getBackground;
             if(taches.Type[i] == "P1"){
-                getBackground = "#CBCBCB";
+                getBackground = "#FFAFAF";
             }else if(taches.Type[i] == "P2"){
-                getBackground = "#FFE876";
+                getBackground = "#ffcc6d";
             }else{
                 getBackground = "#98FF7B";
             }
-            tachesList[1].innerHTML += `<div data-value="${i}" draggable="true" data-value="${taches.id[i]}" class="tache bg-[${getBackground}]" style="border-top:7px solid purple">
+            tachesList[1].innerHTML += `<div data-value="${i}" draggable="true" data-value="${taches.id[i]}" class="tache" style="border-top:7px solid purple;background-color:${getBackground};">
                     <div onclick="AfficherLaTacheSection(${i})">
                         <span class="text-2xl font-bold pr-2">${taches.Type[i]}</span><h2 class="text-sm">${taches.Title[i]}</h2>
                     </div>
@@ -156,13 +156,13 @@ function updateTachesToDo(){
         if(taches.Statu[i] == "todo"){
             var getBackground;
             if(taches.Type[i] == "P1"){
-                getBackground = "#CBCBCB";
+                getBackground = "#FFAFAF";
             }else if(taches.Type[i] == "P2"){
-                getBackground = "#FFE876";
+                getBackground = "#ffcc6d";
             }else{
                 getBackground = "#98FF7B";
             }
-            tachesList[0].innerHTML += `<div data-value="${i}" draggable="true" class="tache bg-[${getBackground}]" style="border-top:7px solid black">
+            tachesList[0].innerHTML += `<div data-value="${i}" draggable="true" class="tache" style="border-top:7px solid black;background-color:${getBackground};">
                     <div onclick="AfficherLaTacheSection(${i})">
                        <span class="text-2xl font-bold pr-2">${taches.Type[i]}</span> <h2 class="text-sm">${taches.Title[i]}</h2>
                     </div>
@@ -336,6 +336,7 @@ function addTache(){
         var year = today.getFullYear();
         var getDesc = document.getElementById("getDesc");
         var getType = document.getElementById("getType");
+        var getStatus = document.getElementById("getStatus");
 
  
         var index = taches.id.length;
@@ -346,7 +347,7 @@ function addTache(){
             taches.Date[index] = year+"-"+month+"-"+day;
             taches.DeadLine[index] = DeadLine.value;
             taches.Type[index] = getType.value;
-            taches.Statu[index] = "todo";
+            taches.Statu[index] = getStatus.value;
             index++;
             getid++;
             ajouteList.style.display = "none";
