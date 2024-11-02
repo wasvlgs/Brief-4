@@ -119,9 +119,7 @@
                 <select id="getFilter" class="bg-textSpecial cursor-pointer w-[120px] h-[45px] rounded-[15px] text-center max-xl:w-[90px] max-xl:h-[35px] max-md:text-sm">
                     <option disabled selected>Filter By</option>
                     <option value="id">ID</option>
-                    <option value="date">Date</option>
-                    <option value="dead">DeadLine</option>
-                    <option value="type">Type</option>
+                    <option value="date">ID Reverse</option>
                 </select>
                 <input id="getSearch" class="w-[250px] h-[45px] pl-5 rounded-[5px] text-black max-xl:w-[150px] max-xl:h-[35px] max-md:text-sm" type="text" placeholder="Search">
             </div>
@@ -149,7 +147,7 @@
 
     <!-- =========================== Divs Absolute ============================= -->
 
-    <div id="AfficherList" class="aboutTache fixed top-[10%] w-full max-w-[600px] h-[70vh] rounded-[30px] p-8">
+    <div id="AfficherList" class="aboutTache fixed top-[10%] w-full max-w-[600px] h-[70vh] rounded-[30px] p-8 flex-col items-center">
         <span id="CloseAfficherLaTache" class="text-4xl absolute right-8 top-3 cursor-pointer">&times;</span>
 
         <h2 class="text-xl font-medium text-textSpecial">Title</h2>
@@ -208,8 +206,7 @@
         <div class="flex gap-[20px]">
             <button id="editFunction" onclick="editFunction(this)"
                 class="w-[200px] h-[45px] bg-textSpecial text-white font-medium text-xl rounded-[15px] mt-8">Edit</button>
-            <button
-                class="w-[200px] h-[45px] bg-[#F83E3E] text-white font-medium text-xl rounded-[15px] mt-8">Delete</button>
+            
         </div>
     </div>
 

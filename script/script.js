@@ -113,7 +113,7 @@ function updateTachesDone(){
             }else{
                 getBackground = "#98FF7B";
             }
-            tachesList[2].innerHTML += `<div data-value="${i}" draggable="true" data-value="${taches.id[i]}" class="tache bg-[${getBackground}]" style="border-top:4px solid aqua">
+            tachesList[2].innerHTML += `<div data-value="${i}" draggable="true" data-value="${taches.id[i]}" class="tache bg-[${getBackground}]" style="border-top:7px solid aqua">
                     <div onclick="AfficherLaTacheSection(${i})">
                         <span class="text-2xl font-bold pr-2">${taches.Type[i]}</span><h2 class="text-sm">${taches.Title[i]}</h2>
                     </div>
@@ -142,7 +142,7 @@ function updateTachesPending(){
             }else{
                 getBackground = "#98FF7B";
             }
-            tachesList[1].innerHTML += `<div data-value="${i}" draggable="true" data-value="${taches.id[i]}" class="tache bg-[${getBackground}]" style="border-top:4px solid purple">
+            tachesList[1].innerHTML += `<div data-value="${i}" draggable="true" data-value="${taches.id[i]}" class="tache bg-[${getBackground}]" style="border-top:7px solid purple">
                     <div onclick="AfficherLaTacheSection(${i})">
                         <span class="text-2xl font-bold pr-2">${taches.Type[i]}</span><h2 class="text-sm">${taches.Title[i]}</h2>
                     </div>
@@ -173,7 +173,7 @@ function updateTachesToDo(){
             }else{
                 getBackground = "#98FF7B";
             }
-            tachesList[0].innerHTML += `<div data-value="${i}" draggable="true" class="tache bg-[${getBackground}]" style="border-top:4px solid black">
+            tachesList[0].innerHTML += `<div data-value="${i}" draggable="true" class="tache bg-[${getBackground}]" style="border-top:7px solid black">
                     <div onclick="AfficherLaTacheSection(${i})">
                        <span class="text-2xl font-bold pr-2">${taches.Type[i]}</span> <h2 class="text-sm">${taches.Title[i]}</h2>
                     </div>
@@ -194,15 +194,15 @@ function updateBorderTop(){
 
     var itemsTodo = taches[0].getElementsByClassName("tache");
     for(i = 0; i < itemsTodo.length; i++){
-        itemsTodo[i].style.borderTop = "4px solid black";
+        itemsTodo[i].style.borderTop = "7px solid black";
     }
     var itemsTodo = taches[1].getElementsByClassName("tache");
     for(i = 0; i < itemsTodo.length; i++){
-        itemsTodo[i].style.borderTop = "4px solid purple";
+        itemsTodo[i].style.borderTop = "7px solid purple";
     }
     var itemsTodo = taches[2].getElementsByClassName("tache");
     for(i = 0; i < itemsTodo.length; i++){
-        itemsTodo[i].style.borderTop = "4px solid aqua";
+        itemsTodo[i].style.borderTop = "7px solid aqua";
     }
 }
 
@@ -422,7 +422,7 @@ function AfficherLaTacheFunction(){
 
 }
 function AfficherLaTacheSection(index){
-    AfficherList.style.display = "block";
+    AfficherList.style.display = "flex";
     ajouteList.style.display = "none";
     listEdit.style.display = "none";
 
@@ -464,7 +464,7 @@ function searchInput(){
         var getSearchValue = getSearch.value;
         for(i = 0; i < selectTaches.length; i++){
             var getTitle = selectTaches[i].getElementsByClassName("allTitleText")[0].innerText;
-            if(getTitle.indexOf(getSearchValue) >= 0){
+            if(getTitle.toUpperCase().indexOf(getSearchValue.toUpperCase()) >= 0){
                 selectTaches[i].style.display = "table-row";
             }else{
                 selectTaches[i].style.display = "none";
@@ -581,6 +581,41 @@ function dragItems(){
 
 }
 
+
+    // ================== Filter Taches ====================
+
+
+    
+    var getFilter = document.getElementById("getFilter");
+    getFilter.onchange = ()=>{
+        filterTaches();
+    }
+
+
+    function filterTaches(){
+
+        if(getFilter.value == "id"){
+            updateAllTachesList();
+            
+        }else if(getFilter.value == "date"){   
+            document.querySelector("tbody").innerHTML = "";
+
+            for(i = taches.id.length - 1; i >= 0 ; i--){
+
+
+                    document.querySelector("tbody").innerHTML += `<tr onclick="editButton(${i})" class="allTaches cursor-pointer w-full max-md:text-sm">
+                        <td class="allIdText">${taches.id[i]}</td>
+                        <td class="allTitleText">${taches.Title[i]}</td>
+                        <td class="max-xl:hidden max-w-[150px]"><div class="w-full max-h-[60px] overflow-y-auto text-center">${taches.Description[i]}</div></td>
+                        <td  class="max-sm:hidden">${taches.Date[i]}</td>
+                        <td>${taches.DeadLine[i]}</td>
+                        <td>${taches.Type[i]}</td>
+                    </tr>`
+            }
+             
+        }
+
+    }
 
 
 
