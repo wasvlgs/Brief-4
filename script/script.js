@@ -215,7 +215,7 @@ function updateAllTachesList(){
         document.querySelector("tbody").innerHTML += `<tr onclick="editButton(${i})" class="allTaches cursor-pointer w-full max-md:text-sm">
             <td class="allIdText">${taches.id[i]}</td>
             <td class="allTitleText">${taches.Title[i]}</td>
-            <td class="max-xl:hidden">${taches.Description[i]}</td>
+            <td class="max-xl:hidden max-w-[150px]"><div class="w-full max-h-[60px] overflow-y-auto text-center">${taches.Description[i]}</div></td>
             <td  class="max-sm:hidden">${taches.Date[i]}</td>
             <td>${taches.DeadLine[i]}</td>
             <td>${taches.Type[i]}</td>
