@@ -13,13 +13,6 @@
     closeNavbar.onclick = ()=>{
         getNavbar.style.width = "0%";
     }
-    var getLi = getNavbar.querySelectorAll("li");
-
-    for(i = 0; i < getLi.length; i++){
-        getLi[i].onclick = ()=>{
-            getNavbar.style.width = "0%"
-        }
-    }
 
 
 
